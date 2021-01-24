@@ -55,9 +55,11 @@
     $(document).ready(function() {
         // Fetch the initial Map
         refreshMap();
+        refreshTable();
     
-        // Fetch every 5 second
+        // Fetch every 2 second
         setInterval(refreshMap, 2000);
+        setInterval(refreshTable, 2000);
     });
 
     function refreshMap(){
@@ -109,21 +111,6 @@
             }
         });
     }
-
-</script>
-    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-<script>
-    /////////////Ajax Requests////////////
-    $(document).ready(function() {
-        // Fetch the initial table
-        refreshTable();
-    
-        // Fetch every 1 second
-        setInterval(refreshTable, 2000);
-    });
-    
     function refreshTable(){
         
         // var trHTML = '';	    
@@ -150,6 +137,8 @@
 
         	});	 
     }	
+
+</script>
     
 </script>
 </html>
