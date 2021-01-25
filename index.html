@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Vargi-Bots</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js.js"></script>
 </head>
 <header>
     <center>
@@ -70,5 +72,10 @@
         	});	 
     }	
     
+</script>
+<script>
+    $(document).ready( function () {
+        $('#table1').DataTable();
+    } );
 </script>
 </html>
