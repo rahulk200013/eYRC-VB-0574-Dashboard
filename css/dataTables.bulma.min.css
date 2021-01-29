@@ -64,6 +64,7 @@ div.dataTables_wrapper  div.dataTables_paginate {
 	position: : relative;
 	float: left;
 	background-color: #eeeeee;
+
 	padding-top: 20px;
 	padding-bottom: 20px;
 	width: 100%;
@@ -73,6 +74,7 @@ div.dataTables_wrapper  div.dataTables_paginate {
 	border-radius: 25px;
 	border: 5px solid #333333;
 	background-color: white;
+	min-height: 340px;
 	width: 97%; 
 	padding: 20px;
 	margin: 0 auto;

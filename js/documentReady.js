@@ -1,9 +1,9 @@
 $(document).ready(function() {
         var table = $('#summary').dataTable( {
             "dom": '<"pull-left"f><"pull-right"p>t',
-	    "pageResize": true,
-            "bServerSide":false,//
+            "bServerSide":false,
             "bProcessing":false,
+	    "iDisplayLength" : 5,
             "sAjaxDataProp": "feed.entry",
             "sAjaxSource": "https://spreadsheets.google.com/feeds/list/1aeLFuBTE06Rk-U-W2C8vdmDrGOwObwTPd1swfs2glVU/1/public/full?alt=json",
             "aoColumns": [
@@ -45,9 +45,7 @@ $(document).ready(function() {
         createHighcharts();
         setTableEvents(table);
         // Fetch every 1 second
-        setInterval( function(){
-            table.api().ajax.reload(null, false);
-        }, 1000);
+        setInterval(refreshTable, 1000, table);
         setInterval(refreshMap, 1000, map);
         setInterval(getTableData, 1000, table);
         // setInterval(setTableEvents, 1000, table);
@@ -58,3 +56,7 @@ $(document).ready(function() {
 
 
     });
+
+    function refreshTable(table) {
+	table.api().ajax.reload(null, false);
+    }
