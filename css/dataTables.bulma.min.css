@@ -19,7 +19,6 @@ div.dataTables_wrapper  div.dataTables_paginate {
 }
 
 #summary tbody tr:hover {
-	min-height: 1000px;
 	border: solid thick;
 	background-color: #3273DD;
 	color: white;
