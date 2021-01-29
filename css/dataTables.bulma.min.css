@@ -9,7 +9,7 @@ div.dataTables_wrapper  div.dataTables_filter {
     text-align: left;
 }
 .dataTables_scrollBody {
-	min-height: 250px;	
+	height: 210px;	
 }
 
 div.dataTables_wrapper  div.dataTables_paginate {
