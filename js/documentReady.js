@@ -1,7 +1,7 @@
 $(document).ready(function() {
         var table = $('#summary').dataTable( {
             "dom": '<"pull-left"f><"pull-right"p>t',
-            "sScrollY": ($(window).height() - 710),
+            "scrollY": '24vh',
             "iDisplayLength": 5,
             "bServerSide":false,//
             "bProcessing":false,
