@@ -1,8 +1,7 @@
 $(document).ready(function() {
         var table = $('#summary').dataTable( {
             "dom": '<"pull-left"f><"pull-right"p>t',
-            "scrollY": '24vh',
-            "iDisplayLength": 5,
+	    "pageResize": true,
             "bServerSide":false,//
             "bProcessing":false,
             "sAjaxDataProp": "feed.entry",
