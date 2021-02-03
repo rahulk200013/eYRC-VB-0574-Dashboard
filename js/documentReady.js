@@ -1,6 +1,7 @@
 $(document).ready(function() {
         var table = $('#summary').dataTable( {
             "dom": '<"pull-left"f><"pull-right"p>t',
+	    "scrollX": true,
             "bServerSide":false,
             "bProcessing":false,
 	    "iDisplayLength" : 5,
