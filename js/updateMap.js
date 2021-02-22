@@ -7,7 +7,7 @@ function refreshMap(map){
         // same_marker = false;     
         var jsonDataObject =[];
 
-        $.getJSON('https://spreadsheets.google.com/feeds/list/15HH5zDDEPQezSvZiSUzeb89B-Hk6tpxAvyTy3WRdgF4/5/public/full?alt=json', function(data) {
+        $.getJSON('https://spreadsheets.google.com/feeds/list/1MbAE_3DCbLcs5GNl-DymV5Tg9RYqg4fHWecy1sX8Su0/5/public/full?alt=json', function(data) {
         for (var i = 0; i < data.feed.entry.length; ++i) {
 
             var json_data = {
