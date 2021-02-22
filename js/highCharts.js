@@ -174,14 +174,24 @@ function setTableEvents(table) {
         maxPointWidth: 50,
         states: {
         hover: {
-          color: '#bf0000',
           borderColor: '#000',
           borderWidth: 3
         }
       },
         type: 'column',
         name: "Medicine",
-        color: '#ff0000',
+        color: {
+        linearGradient: {
+          x1: 0,
+          x2: 0,
+          y1: 1,
+          y2: 0
+        },
+        stops: [
+          [0, '#ff483b'],
+          [1, '#ff1100']
+        ]
+      },
         data: tableData[1],
         events: {
             legendItemClick: function(e) {
@@ -193,14 +203,24 @@ function setTableEvents(table) {
         maxPointWidth: 50,
         states: {
         hover: {
-          color: '#ffd800',
           borderColor: '#000',
           borderWidth: 3
         }
       },
         type: 'column',
         name: "Food",
-        color: "#ffff00",
+        color: {
+        linearGradient: {
+          x1: 0,
+          x2: 0,
+          y1: 1,
+          y2: 0
+        },
+        stops: [
+          [0, '#ffff5e'],
+          [1, '#fafa00']
+        ]
+      },
         data: tableData[2],
         events: {
             legendItemClick: function(e) {
@@ -212,14 +232,24 @@ function setTableEvents(table) {
         maxPointWidth: 50,
         states: {
         hover: {
-          color: '#00ab08',
           borderColor: '#000',
           borderWidth: 3
         }
       },
         type: 'column',
         name: "Cloths",
-        color: "#4ded30",
+        color: {
+        linearGradient: {
+          x1: 0,
+          x2: 0,
+          y1: 1,
+          y2: 0
+        },
+        stops: [
+          [0, '#96ffa2'],
+          [1, '#00ff1e']
+        ]
+      },
         data: tableData[3],
         events: {
             legendItemClick: function(e) {

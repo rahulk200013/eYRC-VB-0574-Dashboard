@@ -48,6 +48,20 @@ $(document).ready(function() {
 
         map.addControl(new L.Control.ZoomMin());
 
+        prevMarkerGroup.addTo(map);
+        refreshMap(map);
+
+        var controlSearch = new L.Control.Search({
+		position:'topleft',		
+		layer: prevMarkerGroup,
+		initial: false,
+		zoom: 12,
+		marker: false,
+		textPlaceholder: 'Search by Order ID'
+		});
+
+		map.addControl( controlSearch );
+
         var arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider();
 
         L.esri.Geocoding.geosearch({
@@ -59,14 +73,12 @@ $(document).ready(function() {
               jsonpParam: 'json_callback',
               propertyName: 'display_name',
               propertyLoc: ['lat','lon'],
-              layers: [2, 3],
+              animateZoom: true,
+              layers: [2, 3, prevMarkerGroup],
               searchFields: ['NAME']
             })
           ]
         }).addTo(map);
-
-        prevMarkerGroup.addTo(map);
-        refreshMap(map);
 
         getTableData(table);
         createHighcharts();
