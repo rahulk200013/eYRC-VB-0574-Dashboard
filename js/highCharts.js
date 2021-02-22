@@ -100,13 +100,23 @@ function setTableEvents(table) {
                   'Order ID: <b>' + this.x + '</b><br>' +
                   'Time taken: <b>' + this.y + ' s</b><br>';
 
-          if (this.series.name == 'Medicine') {
-            text += 'City: <b>' + tableData[5][this.point.index] + '<b>';
-          } else if (this.series.name == 'Food') {
-            text += 'City: <b>' + tableData[5][medicineArray.length + this.point.index] + '<b>';
-          } else {
-            text += 'City: <b>' + tableData[5][medicineArray.length + foodArray.length + this.point.index] + '<b>';
+          // console.log(tableData[0].length);
+
+          for(var i = 0; i < tableData[0].length; i++) {
+              if (tableData[0][i] == this.x) {
+                  break;
+              }
           }
+
+          text += 'City: <b>' + tableData[5][i] + '<b>';
+
+          // if (this.series.name == 'Medicine') {
+          //   text += 'City: <b>' + tableData[5][this.point.index] + '<b>';
+          // } else if (this.series.name == 'Food') {
+          //   text += 'City: <b>' + tableData[5][this.point.index] + '<b>';
+          // } else {
+          //   text += 'City: <b>' + tableData[5][medicineArray.length + foodArray.length + this.point.index] + '<b>';
+          // }
           return text;
           // return 'The value for <b>' + this.x +
           //       '</b><br> is <b>' + this.series.name + '</b>';
@@ -246,7 +256,7 @@ function setTableEvents(table) {
         // console.log(data);
         if (data.gsx$timetaken.$t != "") {
             cityArray.push(data.gsx$city.$t);
-            // orderIdArray.push(data.gsx$orderid.$t);
+            orderIdArray.push(data.gsx$orderid.$t);
             // chartDataArray.push([j, data.gsx$cost.$t]);
             if(data.gsx$priority.$t == 'MP'){
                 foodArray.push([j, parseFloat(data.gsx$timetaken.$t)]);
@@ -298,8 +308,6 @@ function setTableEvents(table) {
   // store all data in dataArray
 
   tableData = dataArray;
-
-  orderIdArray = medicineOrderIdArray.concat(foodOrderIdArray).concat(clothsOrderIdArray);
 
   dataArray.push(orderIdArray, medicineArray, foodArray, clothsArray, max, cityArray);
 }
