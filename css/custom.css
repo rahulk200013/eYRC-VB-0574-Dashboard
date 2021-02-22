@@ -65,4 +65,8 @@ div.leaflet-pane.leaflet-map-pane {
 	clear: both;
 }
 
-
+.highcharts-contextmenu ul hr {
+	background-color: #a09898;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
