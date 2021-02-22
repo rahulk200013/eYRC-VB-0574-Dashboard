@@ -1,0 +1,110 @@
+html, 
+body {
+    
+    background-color: #eeeeee;
+}
+div.dataTables_wrapper  div.dataTables_filter {
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+.dataTables_scrollBody {
+	min-height: 210px;	
+}
+
+div.dataTables_wrapper  div.dataTables_paginate {
+    width: 50%;
+    float: right;
+    text-align: right;
+}
+
+#summary tbody tr:hover {
+	border: solid thick;
+	background-color: #3273DD;
+	color: white;
+}
+
+#map-container {
+	background-color: #eeeeee;
+	width: 50%;
+	float: left;
+	z-index: 0;
+	padding-right: 1.5%;
+	padding-left: 1.5%;
+	padding-top: 10px;
+}
+
+#chart-container {
+	background-color: #eeeeee;
+	width: 50%;
+	float: right;
+	padding-right: 1.5%;
+	padding-left: 1.5%;
+	padding-top: 10px;	
+}
+
+#map {
+	border-radius: 25px;
+	border: 5px solid #333333;
+	height: 450px;
+	z-index: 0;
+	width: 100%;
+}
+
+#chart {
+	background-color: white;
+	border-radius: 25px;
+	height: 450px;
+	border: 5px solid #333333;
+	padding: 20px;
+	width: 100%;
+	float: left;	
+}
+
+#datatable-container {
+	position: : relative;
+	float: left;
+	background-color: #eeeeee;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 100%;
+}
+
+#datatable {
+	border-radius: 25px;
+	border: 5px solid #333333;
+	background-color: white;
+	min-height: 390px;
+	width: 97%; 
+	padding: 20px;
+	margin: 0 auto;
+}
+
+#header {
+	background-color: #333333;
+	height: 80px;
+}
+#header h1{
+	float: right;
+	color: white;
+	left: 50%;
+	margin-left: -140px;
+	font-style: italic;
+	font-size: 50px;
+	padding-left: 10px;
+}
+#eyantraLogo {
+	padding-left: 3%;
+	padding-top: 15px;
+	float: left;
+}
+#courierIcon {
+	height: 100%;
+	padding-top: 0.7%;
+	padding-bottom: 0.7%;
+	padding-right: 3%;
+	float: right;
+}
+.leaflet-popup-content-wrapper {
+	pointer-events: none;
+} 
