@@ -84,7 +84,15 @@ function setTableEvents(table) {
     //   liveRedraw: true
     // },
     exporting: {
-        enabled: true
+        enabled: true,
+        buttons: {
+      contextButton: {
+        theme: {
+          padding: 1
+        },
+        menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'downloadJPEG', 'downloadSVG', 'separator', 'downloadPDF', 'downloadCSV', 'downloadXLS']
+      }
+    }
     },
     tooltip: {
       formatter: function () {
