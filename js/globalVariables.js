@@ -5,4 +5,3 @@ var chart = '';
 let draw = false;
 var last_max = 0;
 var prev_max = 0;
-hidden = [false, false, false];

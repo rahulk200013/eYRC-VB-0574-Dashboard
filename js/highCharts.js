@@ -188,7 +188,7 @@ function setTableEvents(table) {
           y2: 0
         },
         stops: [
-          [0, '#ff483b'],
+          [0, '#fc6c1e'],
           [1, '#ff1100']
         ]
       },
@@ -217,7 +217,7 @@ function setTableEvents(table) {
           y2: 0
         },
         stops: [
-          [0, '#ffff5e'],
+          [0, '#fcf186'],
           [1, '#fafa00']
         ]
       },

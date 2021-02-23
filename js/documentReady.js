@@ -46,10 +46,14 @@ $(document).ready(function() {
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        map.addControl(new L.Control.ZoomMin());
-
         prevMarkerGroup.addTo(map);
         refreshMap(map);
+
+        getTableData(table);
+        createHighcharts();
+        setTableEvents(table);
+
+        map.addControl(new L.Control.ZoomMin());
 
         var arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider();
 
@@ -72,12 +76,6 @@ $(document).ready(function() {
 		});
 
 		map.addControl( controlSearch );
-
-        
-
-        getTableData(table);
-        createHighcharts();
-        setTableEvents(table);
 
         // Refresh everything every 1 second
         setInterval(refreshTable, 1000, table);
