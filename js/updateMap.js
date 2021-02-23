@@ -46,7 +46,7 @@ function refreshMap(map){
             });
 
             for (var j = 0; j < jsonDataObject.length; j++) {
-                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)), {title: 'OID #'+jsonDataObject[j].OrderID});
+                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)), {title: 'OID #'+jsonDataObject[j].OrderID, zIndexOffset: 1000});
                 marker._leaflet_id = j+1;
                 if (jsonDataObject[j].Shipped == "Yes") {
                     marker.setIcon(greenIcon);
@@ -75,18 +75,19 @@ function refreshMap(map){
                 function onHover_Marker(e) {
                         var marker = e.target;
                         popup = L.popup({
-                                    offset: [1, -12]
+                                    offset: [1, -12],
+                                    closeButton: false
                                 })
                         .setLatLng(marker.getLatLng());
                         if (marker.myJsonData.Shipped == "Yes") {
-                            popup.setContent('<b>Order ID: </b>' + marker.myJsonData.OrderID + ', <b>Item: </b>' + marker.myJsonData.Item + '<br><b>City: </b>' + marker.myJsonData.City + '<br>'
-                                     + '<b>Dispatched:</b> Yes' + ', <b>Shipped:</b> Yes');
+                            popup.setContent('Order ID: <b>' + marker.myJsonData.OrderID + '</b>, Item: <b>' + marker.myJsonData.Item + '</b><br>City: <b>' + marker.myJsonData.City + '</b><br>'
+                                     + 'Dispatched:<b> Yes</b>' + ', Shipped:<b> Yes</b>');
                         } else if (marker.myJsonData.Dispatched == "Yes") {
-                            popup.setContent('<b>Order ID: </b>' + marker.myJsonData.OrderID + ', <b>Item: </b>' + marker.myJsonData.Item + '<br><b>City: </b>' + marker.myJsonData.City + '<br>'
-                                     + '<b>Dispatched:</b> Yes' + ', <b>Shipped:</b> No');
+                            popup.setContent('Order ID: <b>' + marker.myJsonData.OrderID + '</b>, Item: <b>' + marker.myJsonData.Item + '</b><br>City: <b>' + marker.myJsonData.City + '</b><br>'
+                                     + 'Dispatched:<b> Yes</b>' + ', Shipped:<b> No</b>');
                         } else {
-                            popup.setContent('<b>Order ID: </b>' + marker.myJsonData.OrderID + ', <b>Item: </b>' + marker.myJsonData.Item + '<br><b>City: </b>' + marker.myJsonData.City + '<br>'
-                                     + '<b>Dispatched:</b> No' + ', <b>Shipped:</b> No');
+                            popup.setContent('Order ID: <b>' + marker.myJsonData.OrderID + '</b>, Item: <b>' + marker.myJsonData.Item + '</b><br>City: <b>' + marker.myJsonData.City + '</b><br>'
+                                     + 'Dispatched:<b> No</b>' + ', Shipped:<b> No</b>');
                         }
                         // .setContent("Order ID: " + marker.myJsonData.OderID + " || Item: " +   marker.myJsonData.Item)
                         popup.openOn(map);

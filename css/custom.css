@@ -1,7 +1,7 @@
 #marker-define {
   position: relative;
-  z-index: 100;
-  top: 10px;
+  z-index: 1;
+  top: 320px;
   right: 10px;
   float: right;
   border: 3px solid #333333;
@@ -85,7 +85,15 @@ div.leaflet-pane.leaflet-map-pane {
 	/*left: 10px;*/
 }
 
+.leaflet-control-search .search-input {
+	width: 150px;
+}
+
 .leaflet-container .leaflet-control-search {
 	margin-top: 15px;
 	z-index: 4;
+}
+
+.leaflet-popup-content-wrapper {
+	z-index: 1000;
 }
