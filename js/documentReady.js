@@ -51,34 +51,29 @@ $(document).ready(function() {
         prevMarkerGroup.addTo(map);
         refreshMap(map);
 
-        var controlSearch = new L.Control.Search({
-		position:'topleft',		
-		layer: prevMarkerGroup,
-		initial: false,
-		zoom: 12,
-		marker: false,
-		textPlaceholder: 'Search by Order ID'
-		});
-
-		map.addControl( controlSearch );
-
         var arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider();
 
         L.esri.Geocoding.geosearch({
           position: 'topleft',
           providers: [
             arcgisOnline,
-            L.esri.Geocoding.mapServiceProvider({
-              url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer',
-              jsonpParam: 'json_callback',
-              propertyName: 'display_name',
-              propertyLoc: ['lat','lon'],
-              animateZoom: true,
-              layers: [2, 3, prevMarkerGroup],
-              searchFields: ['NAME']
-            })
-          ]
+            
+          ],
         }).addTo(map);
+
+        var controlSearch = new L.Control.Search({
+		position:'topleft',		
+		layer: prevMarkerGroup,
+		initial: false,
+		zoom: 12,
+		marker: false,
+		textPlaceholder: 'Search by Order ID',
+		autoCollapse: true
+		});
+
+		map.addControl( controlSearch );
+
+        
 
         getTableData(table);
         createHighcharts();

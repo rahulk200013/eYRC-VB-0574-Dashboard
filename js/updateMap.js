@@ -46,7 +46,7 @@ function refreshMap(map){
             });
 
             for (var j = 0; j < jsonDataObject.length; j++) {
-                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)), {title: jsonDataObject[j].OrderID});
+                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)), {title: 'OID #'+jsonDataObject[j].OrderID});
                 marker._leaflet_id = j+1;
                 if (jsonDataObject[j].Shipped == "Yes") {
                     marker.setIcon(greenIcon);

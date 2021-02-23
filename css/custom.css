@@ -70,3 +70,22 @@ div.leaflet-pane.leaflet-map-pane {
 	margin-top: 6px;
 	margin-bottom: 6px;
 }
+
+.leaflet-control-search .search-button {
+	width: 65px;
+	z-index: 50;
+}
+
+.leaflet-control-search .search-cancel {
+	right: 65px;
+}
+
+.geocoder-control-suggestions {
+	z-index: 5;
+	/*left: 10px;*/
+}
+
+.leaflet-container .leaflet-control-search {
+	margin-top: 15px;
+	z-index: 4;
+}
