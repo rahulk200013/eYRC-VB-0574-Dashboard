@@ -16,37 +16,40 @@
 </header>
  <body>
 
-    <div id="main">
+<div id="main">
     <div id="map-container">
-    <div id="map"><div id="marker-define"><img src="images/marker_define.png"></div></div>
-
+        <div id="map">
+            <div id="marker-define"><img src="images/marker_define.png"></div>
+        </div>
     </div>
+
     <div id="chart-container">
         <div id="chart"></div>
     </div>
+
     <div id="datatable-container">
-    <div  id = "datatable">
-    
-        <table id="summary" class="table nowrap" style="width:100%;">
-            <thead>
-                <tr>
-                    <th id = "orderid">Order ID</th>
-                    <th>Item</th>
-                    <th>Priority</th>
-                    <th>City</th>
-                    <th>Dispatched</th>
-                    <th>Shipped</th>
-                    <th>Order Date and Time</th>
-                    <th>Dispatch Date and Time</th>
-                    <th>Shipped Date and Time</th>
-                    <th>Time Taken (s)</th>
-                </tr>
-            </thead>
-            <tbody id="tableContent" class = "table1">
-            </tbody>
-        </table>
-</div>
-</div>
+        <div  id = "datatable">
+        
+            <table id="summary" class="table nowrap" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th id = "orderid">Order ID</th>
+                        <th>Item</th>
+                        <th>Priority</th>
+                        <th>City</th>
+                        <th>Dispatched</th>
+                        <th>Shipped</th>
+                        <th>Order Date and Time</th>
+                        <th>Dispatch Date and Time</th>
+                        <th>Shipped Date and Time</th>
+                        <th>Time Taken (s)</th>
+                    </tr>
+                </thead>
+                <tbody id="tableContent" class = "table1">
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <footer id="footer">
@@ -54,23 +57,37 @@
 </footer>
 
 </body>
-
+    
+    <!-- Include leaflet plugin for map -->
     <script
     src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin="">
     </script>
 
+    <!-- jQuery plugin to update table -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/dataTables.bulma.min.js"></script>
-    <script type="text/javascript" src="js/updateMap.js"></script>
+
+    <!-- Script where all the global variable are declared -->
     <script type="text/javascript" src="js/globalVariables.js"></script>
+
+    <!-- Script called when the document is ready to initialize dashboard elements -->
     <script type="text/javascript" src="js/documentReady.js"></script>
+
+    <!-- Script to update map -->
+    <script type="text/javascript" src="js/updateMap.js"></script>
+
+    <!-- HighCharts plugin for bar graph -->
     <script type="text/javascript" src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script type="text/javascript" src="js/highCharts.js"></script>
+
+    <!-- Scripts to add export options in the bar graph -->
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
-    <script type="text/javascript" src="js/highCharts.js"></script>
+
+    <!-- Scripts and stylesheetsto add exporting options in dataTable -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
@@ -102,6 +119,7 @@
     integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA=="
     crossorigin=""></script>
 
+    <!-- Script and stylesheet to add zoom in and zoom out functionality -->
     <link rel="stylesheet" href="css/L.Control.ZoomMin.css" media="screen">
     <script src="js/L.Control.ZoomMin.js"></script>
 
@@ -112,6 +130,7 @@
         crossorigin=""
     />
 
+    <!-- Scripts and stylesheet to enable search on map -->
     <link rel="stylesheet" href="css/leaflet-search.css" />
     <script src="js/leaflet-search.js"></script>
     <link rel="stylesheet" type="text/css" href="css/custom.css">
